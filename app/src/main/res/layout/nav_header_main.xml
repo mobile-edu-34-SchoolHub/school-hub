@@ -8,7 +8,7 @@
     android:paddingLeft="24dp"
     android:paddingTop="24dp"
     android:paddingRight="24dp"
-    android:theme="@style/KeepAppTheme">
+    android:theme="@style/SHAppTheme">
 
     <ImageView
         android:layout_width="48dp"
