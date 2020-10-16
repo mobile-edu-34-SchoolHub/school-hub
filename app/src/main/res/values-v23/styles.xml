@@ -48,7 +48,7 @@
         <item name="cardBackgroundColor">?android:colorBackgroundFloating</item>
     </style>
 
-    <style name="SHAppThemeAppTheme" parent="@style/Theme.SHMaterial.DayNight.NoActionBar">
+    <style name="SHAppTheme" parent="@style/Theme.SHMaterial.DayNight.NoActionBar">
         <item name="android:textAppearanceLarge">@style/Body1TextAppearance</item>
         <item name="android:textAppearanceMedium">@style/Body2TextAppearance</item>
         <item name="android:windowBackground">@color/background_color</item>
