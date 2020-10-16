@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.TextAppearance.AppCompat.Widget.ActionBar.Menu" parent="@android:style/TextAppearance.Material.Widget.ActionBar.Menu" />
+    <style name="Base.Theme.AppCompat" parent="@style/Base.V23.Theme.AppCompat" />
+    <style name="Base.Theme.AppCompat.Light" parent="@style/Base.V23.Theme.AppCompat.Light" />
+    <style name="Base.Theme.SHMaterial.Light" parent="@style/Base.V14.Theme.SHMaterial.Light" />
+    <style name="Base.V14.Theme.SHMaterial.Light" parent="@style/Base.V14.Theme.SHMaterial.Light.Bridge" tools:ignore="ResourceCycle">
+        <item name="android:colorBackground">@color/sh_default_color_background</item>
+        <item name="android:windowBackground">@color/sh_default_color_background</item>
+        <item name="android:timePickerDialogTheme">@style/ThemeOverlay.SHMaterial.Dialog</item>
+        <item name="android:datePickerDialogTheme">@style/ThemeOverlay.SHMaterial.Dialog</item>
+        <item name="android:colorEdgeEffect">@color/sh_grey500</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="actionBarStyle">@style/Widget.SHMaterial.Light.ActionBar.Solid</item>
+        <item name="actionModeStyle">@style/Widget.SHMaterial.ActionMode</item>
+        <item name="actionOverflowMenuStyle">@style/Widget.SHMaterial.PopupMenu.Overflow</item>
+        <item name="alertDialogTheme">@style/ThemeOverlay.SHMaterial.Dialog.Alert</item>
+        <item name="borderlessButtonStyle">@style/Widget.SHMaterial.Button.TextButton</item>
+        <item name="bottomSheetDialogTheme">@style/Theme.SHMaterial.Light.BottomSheetDialog</item>
+        <item name="buttonStyle">@style/Widget.AppCompat.Button.Colored</item>
+        <item name="checkboxStyle">@style/Widget.SHMaterial.CompoundButton.CheckBox</item>
+        <item name="colorAccent">?colorPrimarySH</item>
+        <item name="colorError">@color/sh_default_color_error</item>
+        <item name="colorPrimary">@color/sh_default_color_primary</item>
+        <item name="colorPrimaryDark">@color/sh_default_color_primary_dark</item>
+        <item name="listPopupWindowStyle">@style/Widget.SHMaterial.PopupMenu.ListPopupWindow</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.SHMaterial.MaterialAlertDialog</item>
+        <item name="popupMenuStyle">@style/Widget.SHMaterial.PopupMenu</item>
+        <item name="radioButtonStyle">@style/Widget.SHMaterial.CompoundButton.RadioButton</item>
+        <item name="switchStyle">@style/Widget.SHMaterial.CompoundButton.Switch</item>
+        <item name="toolbarStyle">@style/Widget.SHMaterial.Toolbar</item>
+        <item name="viewInflaterClass">com.sh.android.material.theme.MaterialComponentsViewInflater</item>
+    </style>
+    <style name="Base.Widget.AppCompat.ActionButton.Overflow" parent="@android:style/Widget.Material.ActionButton.Overflow" />
+    <style name="Base.Widget.AppCompat.Button.Borderless.Colored" parent="@android:style/Widget.Material.Button.Borderless.Colored" />
+    <style name="Base.Widget.AppCompat.Button.Colored" parent="@android:style/Widget.Material.Button.Colored" />
+    <style name="Base.Widget.AppCompat.EditText" parent="@android:style/Widget.Material.EditText">
+        <item name="android:breakStrategy">simple</item>
+        <item name="android:hyphenationFrequency">none</item>
+    </style>
+    <style name="Base.Widget.AppCompat.RatingBar.Indicator" parent="@android:style/Widget.Material.RatingBar.Indicator" />
+    <style name="Base.Widget.AppCompat.RatingBar.Small" parent="@android:style/Widget.Material.RatingBar.Small" />
+    <style name="Base.Widget.AppCompat.TextView" parent="@android:style/Widget.Material.TextView">
+        <item name="android:breakStrategy">high_quality</item>
+        <item name="android:hyphenationFrequency">none</item>
+    </style>
+    <style name="CardView" parent="@style/Base.CardView">
+        <item name="cardBackgroundColor">?android:colorBackgroundFloating</item>
+    </style>
+
+    <style name="KeepAppTheme.Colored">
+        <item name="colorAccent">@color/sh_yellow500</item>
+    </style>
+
+    <style name="KeepAppTheme" parent="@style/Theme.SHMaterial.DayNight.NoActionBar">
+        <item name="android:textAppearanceLarge">@style/Body1TextAppearance</item>
+        <item name="android:textAppearanceMedium">@style/Body2TextAppearance</item>
+        <item name="android:windowBackground">@color/background_color</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:editTextStyle">@style/EditTextStyle</item>
+        <item name="android:textColorHint">@color/hint_text_color</item>
+        <item name="android:dialogTheme">@style/Theme.AppCompat.DayNight.Dialog</item>
+        <item name="android:alertDialogTheme">@style/DialogTheme</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/background_color</item>
+        <item name="android:navigationBarColor">@color/default_navigation_bar_color</item>
+        <item name="android:colorEdgeEffect">@color/overscroll_color</item>
+        <item name="colorAccent">@color/sh_blue600</item>
+        <item name="colorPrimary">@color/ps_blue</item>
+        <item name="colorPrimaryDark">@color/ps_blue_dark</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="editTextStyle">?android:editTextStyle</item>
+        <item name="homeAsUpIndicator">@drawable/ic_material_arrow_left</item>
+        <item name="popupMenuStyle">@style/PopupMenu</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="snackbarStyle">@style/SnackBarStyle</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowActionModeOverlay">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="ScrollBarStyle">
+        <item name="android:fontFamily">@font/productsansregular</item>
+        <item name="android:scrollbarAlwaysDrawVerticalTrack">true</item>
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:fadeScrollbars">false</item>
+        <item name="android:scrollbarSize">4dp</item>
+        <item name="android:scrollbarThumbVertical">@drawable/scrollbar</item>
+    </style>
+
+    <style name="NavDrawerItemTextAppearance">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:lineSpacingExtra">8.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:paddingLeft">@dimen/share_dialog_text_padding</item>
+        <item name="android:paddingRight">@dimen/share_dialog_text_padding</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:fontFamily">@font/productsansregular</item>
+    </style>
+    <style name="ThemeOverlay.SHMaterial.TextInputEditText" parent="@style/Base.ThemeOverlay.SHMaterial.TextInputEditText">
+        <item name="colorControlNormal">@color/sh_textfield_indicator_text_color</item>
+    </style>
+    <style name="Widget.SHMaterial.ActionBar.Solid" parent="@style/Base.Widget.SHMaterial.ActionBar.Solid">
+        <item name="background">@drawable/sh_appbar_surface_background_dark</item>
+        <item name="backgroundSplit">@drawable/sh_appbar_surface_background_dark</item>
+        <item name="backgroundStacked">@drawable/sh_appbar_surface_background_dark</item>
+    </style>
+    <style name="Widget.SHMaterial.CompoundButton.CheckBox" parent="@style/Widget.MaterialComponents.CompoundButton.CheckBox">
+        <item name="android:background">@drawable/sh_checkbox_ripple</item>
+        <item name="buttonTint">@color/sh_selection_control_button_tint</item>
+        <item name="useMaterialThemeColors">false</item>
+    </style>
+    <style name="Widget.SHMaterial.CompoundButton.RadioButton" parent="@style/Widget.MaterialComponents.CompoundButton.RadioButton">
+        <item name="android:background">@drawable/sh_radiobutton_ripple</item>
+        <item name="buttonTint">@color/sh_selection_control_button_tint</item>
+        <item name="useMaterialThemeColors">false</item>
+    </style>
+    <style name="Widget.MaterialComponents.PopupMenu.ContextMenu" parent="@style/Base.Widget.MaterialComponents.PopupMenu.ContextMenu">
+        <item name="android:popupBackground">?popupMenuBackground</item>
+        <item name="android:popupElevation">8.0dip</item>
+    </style>
+    <style name="Widget.MaterialComponents.PopupMenu.ListPopupWindow" parent="@style/Base.Widget.MaterialComponents.PopupMenu.ListPopupWindow">
+        <item name="android:popupBackground">?popupMenuBackground</item>
+        <item name="android:popupElevation">8.0dip</item>
+    </style>
+    <style name="Base.V23.Theme.AppCompat" parent="@style/Base.V22.Theme.AppCompat">
+        <item name="actionBarItemBackground">?android:actionBarItemBackground</item>
+        <item name="actionMenuTextAppearance">?android:actionMenuTextAppearance</item>
+        <item name="actionMenuTextColor">?android:actionMenuTextColor</item>
+        <item name="actionOverflowButtonStyle">?android:actionOverflowButtonStyle</item>
+        <item name="controlBackground">@drawable/abc_control_background_material</item>
+        <item name="ratingBarStyleIndicator">?android:ratingBarStyleIndicator</item>
+        <item name="ratingBarStyleSmall">?android:ratingBarStyleSmall</item>
+    </style>
+    <style name="Base.V23.Theme.AppCompat.Light" parent="@style/Base.V22.Theme.AppCompat.Light">
+        <item name="actionBarItemBackground">?android:actionBarItemBackground</item>
+        <item name="actionMenuTextAppearance">?android:actionMenuTextAppearance</item>
+        <item name="actionMenuTextColor">?android:actionMenuTextColor</item>
+        <item name="actionOverflowButtonStyle">?android:actionOverflowButtonStyle</item>
+        <item name="controlBackground">@drawable/abc_control_background_material</item>
+        <item name="ratingBarStyleIndicator">?android:ratingBarStyleIndicator</item>
+        <item name="ratingBarStyleSmall">?android:ratingBarStyleSmall</item>
+    </style>
+</resources>

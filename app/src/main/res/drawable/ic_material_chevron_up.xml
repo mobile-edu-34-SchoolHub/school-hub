@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bitmap android:src="@drawable/ic_material_chevron_up_dark" android:tint="@color/darktrans_icons_light"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

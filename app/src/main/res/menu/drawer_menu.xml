@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="nav_view">
+
+    <group android:id="@+id/group_one" android:checkableBehavior="single">
+
+        <item
+            android:checked="true"
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/nav_home" />
+
+        <item
+            android:id="@+id/nav_schools"
+            android:icon="@drawable/ic_school_24"
+            android:title="@string/nav_schools" />
+
+        <item
+            android:id="@+id/nav_courses"
+            android:icon="@drawable/ic_home"
+            android:title="@string/nav_courses" />
+
+    </group>
+
+    <group android:id="@+id/account" android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_baseline_settings_24"
+            android:title="@string/nav_settings" />
+
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/baseline_admin_panel_settings_24"
+            android:title="@string/nav_account" />
+
+    </group>
+
+    <group android:id="@+id/logout" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_help_feedback"
+            android:icon="@drawable/ic_help_dark_24"
+            android:title="@string/nav_help_feedback" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_log_out"
+            android:title="@string/nav_sign_out" />
+    </group>
+</menu>

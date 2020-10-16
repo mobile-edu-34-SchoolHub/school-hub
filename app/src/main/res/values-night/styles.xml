@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.AppCompat.DayNight" parent="@style/Theme.AppCompat" />
+    <style name="Theme.AppCompat.DayNight.Dialog" parent="@style/Theme.AppCompat.Dialog" />
+    <style name="Theme.SHMaterial.DayNight" parent="@style/Theme.SHMaterial.Dark" />
+    <style name="Theme.SHMaterial.DayNight.Bridge" parent="@style/Theme.SHMaterial.Dark.Bridge" />
+    <style name="Theme.SHMaterial.DayNight.Dialog" parent="@style/Theme.SHMaterial.Dark.Dialog" />
+    <style name="Theme.SHMaterial.DayNight.Dialog.MinWidth" parent="@style/Theme.SHMaterial.Dark.Dialog.MinWidth" />
+    <style name="Theme.SHMaterial.DayNight.NoActionBar" parent="@style/Theme.SHMaterial.Dark.NoActionBar" />
+    <style name="ThemeOverlay.Popup" parent="@style/ThemeOverlay.AppCompat.Dark">
+        <item name="colorControlNormal">#ffa9a9a9</item>
+    </style>
+</resources>

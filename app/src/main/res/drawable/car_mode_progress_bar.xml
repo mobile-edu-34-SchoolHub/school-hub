@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background" />
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape android:tint="#ffaaaaaa" android:shape="rectangle">
+                <size android:height="8.0dip" android:width="8.0dip" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>

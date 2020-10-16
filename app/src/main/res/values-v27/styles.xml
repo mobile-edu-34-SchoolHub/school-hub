@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.SHMaterial.Light" parent="@style/Base.Theme.SHMaterial.Light">
+        <item name="android:navigationBarColor">@color/sh_white</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+    <style name="Theme.SHMaterial.Light.BottomSheetDialog" parent="@style/Base.Theme.SHMaterial.Light.BottomSheetDialog">
+        <item name="android:navigationBarColor">@color/sh_white</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:navigationBarDividerColor">@android:color/transparent</item>
+    </style>
+</resources>

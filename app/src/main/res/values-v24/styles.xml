@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Base.TextAppearance.AppCompat.Widget.Button.Colored" parent="@android:style/TextAppearance.Material.Widget.Button.Colored" />
+    <style name="Base.Theme.SHMaterial.Dark" parent="@style/Base.V14.Theme.SHMaterial.Dark">
+        <item name="android:contextPopupMenuStyle">@style/Widget.SHMaterial.PopupMenu.ContextMenu</item>
+    </style>
+    <style name="Base.Theme.SHMaterial.Dark.Dialog" parent="@style/Base.V14.Theme.SHMaterial.Dark.Dialog">
+        <item name="android:contextPopupMenuStyle">@style/Widget.SHMaterial.PopupMenu.ContextMenu</item>
+    </style>
+    <style name="Base.Theme.SHMaterial.Light" parent="@style/Base.V14.Theme.SHMaterial.Light">
+        <item name="android:contextPopupMenuStyle">@style/Widget.SHMaterial.PopupMenu.ContextMenu</item>
+    </style>
+    <style name="Base.Theme.SHMaterial.Light.Dialog" parent="@style/Base.V14.Theme.SHMaterial.Light.Dialog">
+        <item name="android:contextPopupMenuStyle">@style/Widget.SHMaterial.PopupMenu.ContextMenu</item>
+    </style>
+</resources>

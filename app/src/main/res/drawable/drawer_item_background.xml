@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple android:color="@color/sh_grey300"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:left="@dimen/drawer_item_highlight_margin_left" android:right="@dimen/drawer_item_highlight_margin_right">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/drawer_item_background_color" />
+            <corners android:topLeftRadius="@dimen/drawer_item_highlight_corner_radius_left" android:topRightRadius="@dimen/drawer_item_highlight_corner_radius_right" android:bottomLeftRadius="@dimen/drawer_item_highlight_corner_radius_left" android:bottomRightRadius="@dimen/drawer_item_highlight_corner_radius_right" />
+        </shape>
+    </item>
+</ripple>

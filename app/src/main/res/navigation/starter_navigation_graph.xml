@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph" app:startDestination="@id/nav_splash_screen"
+    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <fragment
+        android:id="@+id/nav_splash_screen"
+        android:name="com.mobileedu34.schoolhub.ui.fragments.SplashScreenFragment"
+        android:label=""
+        tools:layout="@layout/fragment_splash_screen" >
+
+        <action
+            android:id="@+id/action_nav_splash_screen_to_nav_sign_in"
+            app:destination="@id/nav_sign_in"
+            app:popUpTo="@id/nav_splash_screen"
+            app:popUpToInclusive="true"
+            app:launchSingleTop="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_sign_in"
+        android:name="com.mobileedu34.schoolhub.ui.fragments.SignInFragment"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_nav_sign_in_to_nav_sign_up"
+            app:destination="@id/nav_sign_up" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_sign_up"
+        android:name="com.mobileedu34.schoolhub.ui.fragments.SignUpFragment"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_nav_sign_up_to_nav_sign_in"
+            app:destination="@id/nav_sign_in"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/nav_sign_up"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>
