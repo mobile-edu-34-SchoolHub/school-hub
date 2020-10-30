@@ -1,22 +1,22 @@
-package com.mobileedu34.schoolhub.callbacks.users;
+package com.mobileedu34.schoolhub.callbacks.accounts;
 
 import com.mobileedu34.schoolhub.models.User;
 
-public class UsersActionController implements ActionContract.Presenter, ActionContract.OnActionResultListener {
+public class AccountsActionController implements ActionContract.Presenter, ActionContract.OnActionResultListener {
     private ActionContract.View mView;
     private ActionCenter mActionCenter;
-    private static UsersActionController mInstance;
+    private static AccountsActionController mInstance;
 
     public void setListener(ActionContract.View view) {
         this.mView = view;
         mActionCenter = new ActionCenter(this);
     }
 
-    public UsersActionController() {}
+    public AccountsActionController() {}
 
-    public static UsersActionController getInstance() {
+    public static AccountsActionController getInstance() {
         if(mInstance == null) {
-            mInstance = new UsersActionController();
+            mInstance = new AccountsActionController();
         }
         return mInstance;
     }
@@ -32,8 +32,8 @@ public class UsersActionController implements ActionContract.Presenter, ActionCo
     }
 
     @Override
-    public void signUpUser(String emailAddress, String password) {
-        mActionCenter.signUpUser(emailAddress, password);
+    public void signUpUser(String emailAddress, String password, String fullName) {
+        mActionCenter.signUpUser(emailAddress, password, fullName);
     }
 
     @Override
@@ -47,8 +47,8 @@ public class UsersActionController implements ActionContract.Presenter, ActionCo
     }
 
     @Override
-    public void onSignInUserSuccess() {
-        mView.onSignInUserSuccess();
+    public void onSignInUserSuccess(User user) {
+        mView.onSignInUserSuccess(user);
     }
 
     @Override

@@ -13,10 +13,13 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.mobileedu34.schoolhub.R;
-import com.mobileedu34.schoolhub.callbacks.users.ActionContract;
-import com.mobileedu34.schoolhub.callbacks.users.UsersActionController;
+import com.mobileedu34.schoolhub.callbacks.accounts.ActionContract;
+import com.mobileedu34.schoolhub.callbacks.accounts.AccountsActionController;
 import com.mobileedu34.schoolhub.models.User;
+import com.mobileedu34.schoolhub.preferences.AppPreferences;
 import com.mobileedu34.schoolhub.ui.activities.MainActivity;
 import com.mobileedu34.schoolhub.utils.DialogLoader;
 
@@ -39,7 +42,7 @@ public class SignUpFragment extends Fragment implements ActionContract.View {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         dialogLoader = new DialogLoader(requireContext());
-        UsersActionController.getInstance().setListener(this);
+        AccountsActionController.getInstance().setListener(this);
     }
 
     @Override
@@ -88,7 +91,7 @@ public class SignUpFragment extends Fragment implements ActionContract.View {
 
         if(! userName.isEmpty() && !userEmail.isEmpty() && ! userPassword.isEmpty()) {
             dialogLoader.showProgressDialog(getResources().getString(R.string.signing_up));
-            UsersActionController.getInstance().signUpUser(userEmail, userPassword);
+            AccountsActionController.getInstance().signUpUser(userEmail, userPassword, userName);
         } else {
             Toast.makeText(requireContext(), "Please, fill the form fields", Toast.LENGTH_SHORT).show();
         }
@@ -96,21 +99,16 @@ public class SignUpFragment extends Fragment implements ActionContract.View {
 
     @Override
     public void onCreateUserSuccess() {
-        dialogLoader.dismissProgressDialog();
-        requireActivity().finish();
-        startActivity(new Intent(requireActivity(), MainActivity.class));
+
     }
 
     @Override
     public void onCreateUserFailure(String message) {
-        try {
-            Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
-        }catch (Exception ignore) {}
-        dialogLoader.dismissProgressDialog();
+
     }
 
     @Override
-    public void onSignInUserSuccess() {
+    public void onSignInUserSuccess(User user) {
         // Nothing to override here
     }
 
@@ -121,14 +119,19 @@ public class SignUpFragment extends Fragment implements ActionContract.View {
 
     @Override
     public void onSignUpUserSuccess() {
-        User user = new User();
-        user.setEmailAddress(userEmail);
-        user.setFullName(userName);
-        UsersActionController.getInstance().createUser(user);
+        dialogLoader.dismissProgressDialog();
+        FirebaseUser fUser = FirebaseAuth.getInstance().getCurrentUser();
+        AppPreferences preferences = new AppPreferences(requireContext());
+        preferences.setUserId(fUser.getUid());
+        preferences.setUserEmail(fUser.getEmail());
+        preferences.setUserRole(2);
+        requireActivity().finish();
+        startActivity(new Intent(requireActivity(), MainActivity.class));
     }
 
     @Override
     public void onSignUpUserFailure(String message) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
         try {
             dialogLoader.dismissProgressDialog();
         }catch (Exception ignore) {}

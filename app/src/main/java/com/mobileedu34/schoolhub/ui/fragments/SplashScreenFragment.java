@@ -14,6 +14,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.mobileedu34.schoolhub.R;
+import com.mobileedu34.schoolhub.preferences.AppPreferences;
 import com.mobileedu34.schoolhub.ui.activities.MainActivity;
 
 public class SplashScreenFragment extends Fragment {
@@ -39,7 +40,7 @@ public class SplashScreenFragment extends Fragment {
             @Override
             public void run() {
                 try {
-                    if (fUser != null && fUser.getEmail() != null) {
+                    if ((fUser != null && fUser.getEmail() != null) || (new AppPreferences(requireContext()).getUserId() != null)) {
                         requireActivity().finish();
                         startActivity(new Intent(requireActivity(), MainActivity.class));
                     } else {

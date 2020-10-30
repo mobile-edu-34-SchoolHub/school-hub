@@ -2,7 +2,6 @@ package com.mobileedu34.schoolhub.ui.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +14,13 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.mobileedu34.schoolhub.R;
-import com.mobileedu34.schoolhub.callbacks.users.ActionContract;
-import com.mobileedu34.schoolhub.callbacks.users.UsersActionController;
+import com.mobileedu34.schoolhub.callbacks.accounts.ActionContract;
+import com.mobileedu34.schoolhub.callbacks.accounts.AccountsActionController;
+import com.mobileedu34.schoolhub.models.User;
+import com.mobileedu34.schoolhub.preferences.AppPreferences;
 import com.mobileedu34.schoolhub.ui.activities.MainActivity;
 import com.mobileedu34.schoolhub.utils.DialogLoader;
 
@@ -35,7 +38,7 @@ public class SignInFragment extends Fragment implements ActionContract.View {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         dialogLoader = new DialogLoader(requireContext());
-        UsersActionController.getInstance().setListener(this);
+        AccountsActionController.getInstance().setListener(this);
     }
 
     @Override
@@ -83,7 +86,7 @@ public class SignInFragment extends Fragment implements ActionContract.View {
 
         if(! userEmail.isEmpty() && ! userPassword.isEmpty()) {
             dialogLoader.showProgressDialog(getResources().getString(R.string.signing_in));
-            UsersActionController.getInstance().signInUser(userEmail, userPassword);
+            AccountsActionController.getInstance().signInUser(userEmail, userPassword);
         } else {
             Toast.makeText(requireContext(), "Please, fill the form fields", Toast.LENGTH_SHORT).show();
         }
@@ -100,7 +103,22 @@ public class SignInFragment extends Fragment implements ActionContract.View {
     }
 
     @Override
-    public void onSignInUserSuccess() {
+    public void onSignInUserSuccess(User user) {
+        // Checking if the user being authenticated is a manager or not
+        // Here, we consider for the moment that only school managers can use Firebase Auth.
+
+        if(user != null) {
+            AppPreferences preferences = new AppPreferences(requireContext());
+            preferences.setUserId(user.getUserId());
+            preferences.setUserEmail(user.getEmailAddress());
+            preferences.setUserRole(user.getUserRole());
+        } else {
+            FirebaseUser fUser = FirebaseAuth.getInstance().getCurrentUser();
+            AppPreferences preferences = new AppPreferences(requireContext());
+            preferences.setUserId(fUser.getUid());
+            preferences.setUserEmail(fUser.getEmail());
+            preferences.setUserRole(2);
+        }
         dialogLoader.dismissProgressDialog();
         requireActivity().finish();
         startActivity(new Intent(requireActivity(), MainActivity.class));

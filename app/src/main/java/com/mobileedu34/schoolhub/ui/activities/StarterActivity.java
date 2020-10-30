@@ -1,14 +1,10 @@
 package com.mobileedu34.schoolhub.ui.activities;
 
+import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-import android.os.Bundle;
 import com.google.android.material.appbar.AppBarLayout;
-import com.google.firebase.auth.FirebaseAuth;
 import com.mobileedu34.schoolhub.R;
 
 public class StarterActivity extends AppCompatActivity {
@@ -24,18 +20,6 @@ public class StarterActivity extends AppCompatActivity {
         AppBarLayout appBarLayout = findViewById(R.id.app_bar_layout);
         setSupportActionBar(toolbar);
         appBarLayout.setTargetElevation(0f);
-
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_splash_screen,
-                R.id.nav_sign_in,
-                R.id.nav_sign_up
-        ).build();
     }
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
-    }
 }

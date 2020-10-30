@@ -3,41 +3,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="nav_view">
 
-    <group android:id="@+id/group_one" android:checkableBehavior="single">
-
-        <item
-            android:checked="true"
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_home"
-            android:title="@string/nav_home" />
-
+    <group android:id="@+id/manager_section" android:checkableBehavior="single">
         <item
             android:id="@+id/nav_schools"
-            android:icon="@drawable/ic_school_24"
+            android:icon="@drawable/ic_home"
             android:title="@string/nav_schools" />
 
         <item
-            android:id="@+id/nav_courses"
-            android:icon="@drawable/ic_home"
-            android:title="@string/nav_courses" />
-
-    </group>
-
-    <group android:id="@+id/account" android:checkableBehavior="single">
+            android:id="@+id/nav_lecturers"
+            android:icon="@drawable/ic_lecturers"
+            android:title="@string/nav_lecturers" />
 
         <item
-            android:id="@+id/nav_settings"
-            android:icon="@drawable/ic_baseline_settings_24"
-            android:title="@string/nav_settings" />
+            android:id="@+id/nav_students"
+            android:icon="@drawable/ic_lecturers"
+            android:title="@string/nav_students" />
 
+        <item
+            android:id="@+id/nav_classrooms"
+            android:icon="@drawable/ic_home"
+            android:title="@string/nav_classrooms" />
+    </group>
+
+
+    <group android:id="@+id/lecturer_section" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_lecturer_students"
+            android:icon="@drawable/ic_lecturers"
+            android:title="@string/nav_lecturer_students" />
+
+        <item
+            android:id="@+id/nav_lecturer_classroom"
+            android:icon="@drawable/ic_home"
+            android:title="@string/nav_lecturer_classroom" />
+    </group>
+
+
+    <group android:id="@+id/student_section" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_student_classroom"
+            android:icon="@drawable/ic_home"
+            android:title="@string/nav_student_classroom" />
+    </group>
+
+
+
+    <group android:id="@+id/account_settings_section" android:checkableBehavior="single">
         <item
             android:id="@+id/nav_account"
             android:icon="@drawable/baseline_admin_panel_settings_24"
             android:title="@string/nav_account" />
 
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_baseline_settings_24"
+            android:title="@string/nav_settings" />
     </group>
 
-    <group android:id="@+id/logout" android:checkableBehavior="single">
+
+    <group android:id="@+id/help_logout_section" android:checkableBehavior="single">
         <item
             android:id="@+id/nav_help_feedback"
             android:icon="@drawable/ic_help_dark_24"
@@ -48,4 +72,6 @@
             android:icon="@drawable/ic_log_out"
             android:title="@string/nav_sign_out" />
     </group>
+
+
 </menu>

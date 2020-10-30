@@ -3437,4 +3437,9 @@
         <item name="shapeAppearance">@style/ShapeAppearance.MaterialComponents.Tooltip</item>
     </style>
 
+    <style name="UserRoleRadioButton">
+        <item name="colorAccent">@color/sh_yellow500</item>
+        <item name="android:gravity">start|center</item>
+    </style>
+
 </resources>
