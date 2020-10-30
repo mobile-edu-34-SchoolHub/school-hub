@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    android:background="@drawable/bottom_sheet_editor_background"
+    android:id="@+id/bottomSheetContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:theme="@style/DialogTheme"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:padding="15dp"
+        android:gravity="start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/fill_input"
+        android:textColor="@color/dark_gray"
+        android:textAppearance="?attr/textAppearanceHeadline6" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            app:boxStrokeColor="@color/darker_blue"
+            android:textColorHint="@color/dark_gray"
+            app:startIconTint="@color/dark_gray"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:id="@+id/name_section"
+            android:layout_width="match_parent"
+            app:startIconDrawable="@drawable/outline_person_outline_24"
+            android:layout_height="wrap_content"
+            app:helperTextTextColor="@color/sh_red"
+            app:helperTextEnabled="true"
+            android:hint="@string/names">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:fontFamily="@font/productsansregular"
+                android:textColor="@color/dark_gray"
+                android:layout_width="match_parent"
+                android:id="@+id/edt_name"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:visibility="gone"
+            app:boxStrokeColor="@color/darker_blue"
+            android:textColorHint="@color/dark_gray"
+            app:startIconTint="@color/dark_gray"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:id="@+id/phone_section"
+            android:layout_width="match_parent"
+            app:startIconDrawable="@drawable/outline_contact_phone_black_24"
+            android:layout_height="wrap_content"
+            app:helperTextTextColor="@color/sh_red"
+            app:helperTextEnabled="true"
+            android:hint="@string/phone_number">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:fontFamily="@font/productsansregular"
+                android:textColor="@color/dark_gray"
+                android:layout_width="match_parent"
+                android:id="@+id/edt_phone"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:visibility="gone"
+            app:boxStrokeColor="@color/darker_blue"
+            android:textColorHint="@color/dark_gray"
+            app:startIconTint="@color/dark_gray"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:id="@+id/email_section"
+            android:layout_width="match_parent"
+            app:startIconDrawable="@drawable/outline_contact_mail_24"
+            android:layout_height="wrap_content"
+            app:helperTextTextColor="@color/sh_red"
+            app:helperTextEnabled="true"
+            android:hint="@string/email_address">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:fontFamily="@font/productsansregular"
+                android:textColor="@color/dark_gray"
+                android:layout_width="match_parent"
+                android:id="@+id/edt_email"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <RadioGroup
+            android:id="@+id/radio_gender_group"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:checked="true"
+                android:id="@+id/radio_male_gender"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/gender_male"/>
+
+            <RadioButton
+                android:id="@+id/radio_gender_female"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/gender_female"/>
+        </RadioGroup>
+
+        <LinearLayout android:paddingEnd="15dp" android:paddingStart="0dp" android:orientation="horizontal" android:gravity="end|center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" style="?android:buttonBarStyle">
+            <com.google.android.material.button.MaterialButton android:id="@+id/cancel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cancel" style="?android:buttonBarNegativeButtonStyle" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/save" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/save" style="?android:buttonBarPositiveButtonStyle" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

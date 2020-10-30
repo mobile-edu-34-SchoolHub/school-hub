@@ -339,6 +339,93 @@
 
             </com.google.android.material.card.MaterialCardView>
 
+            <View
+                android:layout_marginStart="60dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:alpha="0.10"
+                android:background="@android:color/black"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_classroom_section"
+                android:clickable="true"
+                android:focusable="true"
+                android:checkable="true"
+                app:cardCornerRadius="0dp"
+                app:strokeWidth="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center_vertical"
+                    android:id="@+id/classroom_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1.0">
+
+                    <ImageView
+                        android:tint="@color/dark_icons"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_home"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/nav_classrooms"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="?android:attr/textColorSecondary" />
+
+                        <TextView
+                            android:id="@+id/classroom_names"
+                            android:fontFamily="@font/productsansregular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/dark_gray"
+                            android:textSize="16sp"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:tint="@color/dark_icons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginStart="20dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/edit"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <LinearLayout
+                android:padding="35dp"
+                android:theme="@style/DialogTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_delete_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/delete_user"
+                    style="?android:buttonBarPositiveButtonStyle" />
+
+            </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>

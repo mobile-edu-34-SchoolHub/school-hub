@@ -1,12 +1,10 @@
 package com.mobileedu34.schoolhub.adapters;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,9 +13,10 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.card.MaterialCardView;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.mikhaellopez.circularimageview.CircularImageView;
+import com.mobileedu34.schoolhub.ui.fragments.AddUserFragment;
 import com.mobileedu34.schoolhub.R;
+import com.mobileedu34.schoolhub.helpers.UserAction;
 import com.mobileedu34.schoolhub.models.User;
 import com.squareup.picasso.Picasso;
 
@@ -76,7 +75,6 @@ public class LecturerAdapter extends RecyclerView.Adapter<LecturerAdapter.ViewHo
 
         private TextView txvName;
         private TextView txvEmail;
-        private TextView txvAdminLabel;
         private CircularImageView mUserProfilePhoto;
         private MaterialCardView card;
 
@@ -93,6 +91,13 @@ public class LecturerAdapter extends RecyclerView.Adapter<LecturerAdapter.ViewHo
         public void onClick(View view) {
             currentPosition = getAdapterPosition();
             User user = mLecturersList.get(currentPosition);
+            Bundle args = new Bundle();
+            args.putParcelable(AddUserFragment.ARG_USER, user);
+            args.putString(AddUserFragment.ARG_TITLE, "Lecturer Details");
+            args.putSerializable(AddUserFragment.ARG_USER_ACTION_TYPE, UserAction.VIEW_LECTURER);
+            NavHostFragment
+                    .findNavController(fragmentInstance)
+                    .navigate(R.id.action_nav_lecturers_to_add_user_fragment, args);
         }
 
         @Override

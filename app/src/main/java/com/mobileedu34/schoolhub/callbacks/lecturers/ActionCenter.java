@@ -2,6 +2,8 @@ package com.mobileedu34.schoolhub.callbacks.lecturers;
 
 import androidx.annotation.NonNull;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -28,20 +30,65 @@ public class ActionCenter implements ActionContract.OnPerformAction {
         this.mOnActionResultListener = onActionResultListener;
     }
 
+    //2xt74n30
+    //test1@test.com
 
     @Override
     public void createLecturer(User lecturer) {
-
+        mDatabase.child(USERS_COLLECTION)
+                .child(lecturer.getUserId())
+                .setValue(lecturer)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        mOnActionResultListener.onCreateLecturerSuccess();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        mOnActionResultListener.onCreateLecturerFailure(e.getMessage());
+                    }
+                });
     }
 
     @Override
     public void updateLecturer(User lecturer) {
-
+        mDatabase.child(USERS_COLLECTION)
+                .child(lecturer.getUserId())
+                .setValue(lecturer)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        mOnActionResultListener.onUpdateLecturerSuccess();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        mOnActionResultListener.onUpdateLecturerFailure(e.getMessage());
+                    }
+                });
     }
 
     @Override
     public void deleteLecturer(String lecturerId) {
-
+        mDatabase
+                .child(USERS_COLLECTION)
+                .child(lecturerId)
+                .removeValue()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        mOnActionResultListener.onDeleteLecturerSuccess();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        mOnActionResultListener.onDeleteLecturerFailure(e.getMessage());
+                    }
+                });
     }
 
     @Override
@@ -54,7 +101,9 @@ public class ActionCenter implements ActionContract.OnPerformAction {
                         if(snapshot.exists()) {
                             for(DataSnapshot postSnapshot : snapshot.getChildren()) {
                                 User user = postSnapshot.getValue(User.class);
-                                lecturers.add(user);
+                                if(user != null && user.getUserRole() == 1) {
+                                    lecturers.add(user);
+                                }
                             }
                             mOnActionResultListener.onGetLecturersSuccess(lecturers);
                         } else {

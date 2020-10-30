@@ -5,11 +5,6 @@
 
     <group android:id="@+id/manager_section" android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_schools"
-            android:icon="@drawable/ic_home"
-            android:title="@string/nav_schools" />
-
-        <item
             android:id="@+id/nav_lecturers"
             android:icon="@drawable/ic_lecturers"
             android:title="@string/nav_lecturers" />
@@ -36,16 +31,20 @@
             android:id="@+id/nav_lecturer_classroom"
             android:icon="@drawable/ic_home"
             android:title="@string/nav_lecturer_classroom" />
+
+        <item
+            android:id="@+id/nav_lecturer_lectures"
+            android:icon="@drawable/ic_school_24"
+            android:title="@string/nav_lectures" />
     </group>
 
 
     <group android:id="@+id/student_section" android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_student_classroom"
-            android:icon="@drawable/ic_home"
-            android:title="@string/nav_student_classroom" />
+            android:id="@+id/nav_student_lectures"
+            android:icon="@drawable/ic_school_24"
+            android:title="@string/nav_lectures" />
     </group>
-
 
 
     <group android:id="@+id/account_settings_section" android:checkableBehavior="single">

@@ -5,7 +5,6 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -18,7 +17,6 @@ public class ActionCenter implements ActionContract.OnPerformAction {
 
     private ActionContract.OnActionResultListener mOnActionResultListener;
     private FirebaseAuth fAuth = FirebaseAuth.getInstance();
-    private FirebaseUser fUser = fAuth.getCurrentUser();
     private boolean creatingAdminAccount = false;
     private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     final String USERS_COLLECTION = "users";

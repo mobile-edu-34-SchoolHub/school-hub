@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/choose_image"
+    android:layout_width="fill_parent"
+    android:paddingBottom="10dp"
+    android:layout_height="wrap_content"
+    android:theme="@style/SHAppTheme"
+    android:background="@drawable/bottom_sheet_editor_background"
+    android:orientation="vertical">
+
+    <TextView
+        android:padding="15dp"
+        android:gravity="start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/profile_avatar"
+        android:textColor="@color/dark_gray"
+        android:textAppearance="?attr/textAppearanceHeadline6" />
+
+
+    <com.google.android.material.card.MaterialCardView
+        app:cardCornerRadius="0dp"
+        app:strokeWidth="0dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:clickable="true"
+                android:focusable="true"
+                android:id="@+id/gallery"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:contentDescription="@string/hello_blank_fragment"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/attach_gallery"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_marginTop="7dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/dark_gray"
+                    android:text="@string/gallery"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:clickable="true"
+                android:focusable="true"
+                android:id="@+id/camera"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:contentDescription="@string/hello_blank_fragment"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/attach_camera"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_marginTop="7dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/dark_gray"
+                    android:text="@string/camera"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:clickable="true"
+                android:focusable="true"
+                android:id="@+id/delete_image"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:contentDescription="@string/hello_blank_fragment"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/clear"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_marginTop="7dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/dark_gray"
+                    android:text="@string/delete"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

@@ -24,10 +24,10 @@
         android:layout_gravity="bottom|end"
         app:backgroundTint="@color/dark_gray"
         android:layout_margin="16dp"
-        android:tint="@color/ps_blue_dark"
+        android:tint="@color/sh_white"
         app:maxImageSize="24dp"
         app:borderWidth="0dp"
-        android:contentDescription="@string/add_lecturer"
+        android:contentDescription="@string/add_classroom"
         app:srcCompat="@drawable/ic_baseline_add_24"/>
 
 

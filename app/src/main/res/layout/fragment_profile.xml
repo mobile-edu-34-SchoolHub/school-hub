@@ -1,14 +1,346 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:theme="@style/SHAppTheme"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fragments.ProfileFragment">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:visibility="visible"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="160dp"
+            android:id="@+id/user_picture"
+            android:layout_margin="25dp"
+            android:layout_height="160dp">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/user_profile_photo"
+                android:layout_width="match_parent"
+                app:civ_border="false"
+                android:src="@drawable/ic_settings_profile"
+                app:civ_border_width="0dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"/>
+
+            <ProgressBar
+                android:visibility="gone"
+                android:id="@+id/upload_progress"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:elevation="5dp"
+                android:layout_gravity="center"
+                android:indeterminateTint="@android:color/holo_red_light"/>
+
+            <FrameLayout
+                android:id="@+id/launch_camera"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:background="@drawable/camera_bg"
+                android:layout_gravity="bottom|end">
+
+                <ImageView
+                    android:id="@+id/launch_camera_icon"
+                    android:scaleType="centerCrop"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:srcCompat="@drawable/camera_small"
+                    android:layout_gravity="center"/>
+
+            </FrameLayout>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+        <LinearLayout
+            android:id="@+id/setting_items"
+            android:layout_marginTop="10dp"
+            android:visibility="visible"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_name_section"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:checkable="true"
+                app:cardCornerRadius="0dp"
+                app:strokeWidth="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center_vertical"
+                    android:id="@+id/name_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1.0">
+
+                    <ImageView
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:tint="@color/dark_icons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/outline_person_outline_24"/>
+                    <LinearLayout
+                        android:gravity="center_vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/full_name"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="?android:attr/textColorSecondary" />
+                        <TextView
+                            android:id="@+id/user_name"
+                            android:fontFamily="@font/productsansregular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/dark_gray"
+                            android:textSize="16sp"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:tint="@color/dark_icons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginStart="20dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/edit"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <View
+                android:layout_marginStart="60dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:alpha="0.10"
+                android:background="@android:color/black"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_phone_section"
+                android:clickable="true"
+                android:focusable="true"
+                android:checkable="true"
+                app:cardCornerRadius="0dp"
+                app:strokeWidth="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center_vertical"
+                    android:id="@+id/phone_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1.0">
+
+                    <ImageView
+                        android:tint="@color/dark_icons"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/outline_contact_phone_24"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/phone_number"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="?android:attr/textColorSecondary" />
+                        <TextView
+                            android:id="@+id/user_phone_number"
+                            android:fontFamily="@font/productsansregular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/dark_gray"
+                            android:textSize="16sp"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/phone_edit"
+                        android:tint="@color/dark_icons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/edit"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <View
+                android:layout_marginStart="60dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:alpha="0.10"
+                android:background="@android:color/black"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_email_section"
+                android:clickable="true"
+                android:focusable="true"
+                android:checkable="true"
+                app:cardCornerRadius="0dp"
+                app:strokeWidth="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center_vertical"
+                    android:id="@+id/email_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1.0">
+
+                    <ImageView
+                        android:tint="@color/dark_icons"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/outline_contact_mail_24"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/email_address"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="?android:attr/textColorSecondary" />
+                        <TextView
+                            android:id="@+id/user_email_address"
+                            android:fontFamily="@font/productsansregular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/dark_gray"
+                            android:textSize="16sp"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/email_edit"
+                        android:tint="@color/dark_icons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginStart="20dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/edit"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <View
+                android:layout_marginStart="60dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:alpha="0.10"
+                android:background="@android:color/black"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_gender_section"
+                android:clickable="true"
+                android:focusable="true"
+                android:checkable="true"
+                app:cardCornerRadius="0dp"
+                app:strokeWidth="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center_vertical"
+                    android:id="@+id/gender_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1.0">
+
+                    <ImageView
+                        android:tint="@color/dark_icons"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/gender"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/gender"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="?android:attr/textColorSecondary" />
+                        <TextView
+                            android:id="@+id/user_gender"
+                            android:fontFamily="@font/productsansregular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/dark_gray"
+                            android:textSize="16sp"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:tint="@color/dark_icons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginStart="20dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/edit"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

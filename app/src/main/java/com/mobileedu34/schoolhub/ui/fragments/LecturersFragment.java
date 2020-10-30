@@ -17,23 +17,17 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.database.DatabaseReference;
-import com.mobileedu34.schoolhub.AddUserFragment;
 import com.mobileedu34.schoolhub.R;
 import com.mobileedu34.schoolhub.adapters.LecturerAdapter;
 import com.mobileedu34.schoolhub.callbacks.lecturers.ActionContract;
 import com.mobileedu34.schoolhub.callbacks.lecturers.LecturersActionController;
+import com.mobileedu34.schoolhub.helpers.UserAction;
 import com.mobileedu34.schoolhub.models.User;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class LecturersFragment extends Fragment implements ActionContract.View {
 
-
-    private List<User> users;
-    private DatabaseReference mDatabase;
-    public String userId;
     private LecturerAdapter adapter;
     private RecyclerView recyclerView;
     private ProgressBar mProgressBar;
@@ -81,8 +75,7 @@ public class LecturersFragment extends Fragment implements ActionContract.View {
             public void onClick(View v) {
                 Bundle args = new Bundle();
                 args.putString(AddUserFragment.ARG_TITLE, "Add a lecturer");
-                //args.putBoolean("browsing", false);
-                //args.putSerializable("type", ListType.PRIVATE);
+                args.putSerializable(AddUserFragment.ARG_USER_ACTION_TYPE, UserAction.ADD_LECTURER);
                 NavHostFragment
                         .findNavController(requireParentFragment())
                         .navigate(R.id.action_nav_lecturers_to_add_user_fragment, args);
